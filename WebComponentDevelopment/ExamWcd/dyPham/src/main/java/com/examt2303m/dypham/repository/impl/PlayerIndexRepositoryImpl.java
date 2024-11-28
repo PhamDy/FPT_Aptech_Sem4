@@ -92,6 +92,27 @@ public class PlayerIndexRepositoryImpl implements PlayerIndexRepository {
 
     @Override
     public void deleteByPlayerAndIndexer(Player player, Indexer indexer) {
+        Transaction transaction = null;
+        try (Session session = HIbernateUtil.getSessionFactory().openSession()) {
+            // Bắt đầu transaction
+            transaction = session.beginTransaction();
 
+            String hql = "DELETE FROM PlayerIndex pi WHERE pi.player = :player AND pi.indexer = :indexer";
+            Query<?> query = session.createQuery(hql);
+            query.setParameter("player", player);
+            query.setParameter("indexer", indexer);
+
+            // Thực thi câu lệnh xóa
+            int rowsDeleted = query.executeUpdate();
+            System.out.println("Deleted rows: " + rowsDeleted);
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            throw new RuntimeException("Error deleting PlayerIndex: " + e.getMessage());
+        }
     }
 }

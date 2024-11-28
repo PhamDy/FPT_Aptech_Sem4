@@ -70,10 +70,9 @@ public class PlayerController extends HttpServlet {
             if ("delete".equals(action)) {
                 int playerId = Integer.parseInt(req.getParameter("playerId"));
                 Player player = playerService.getPlayerById(playerId);
-                int indexerId = player.getIndexer().getIndexId();
-
-
-
+                playerService.deletePlayer(player.getPlayerId());
+                indexerService.deleteIndexer(player.getIndexer().getIndexId());
+                playerIndexService.getPlayerIndexByPlayerAndIndexer(player, player.getIndexer());
                 res.sendRedirect(req.getContextPath() + "/player");
                 return;
             }

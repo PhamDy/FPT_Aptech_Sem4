@@ -41,7 +41,7 @@
                 <form action="${pageContext.request.contextPath}/student" method="post" style="display:inline;">
                     <input type="hidden" name="action" value="delete">
                     <input type="hidden" name="playerId" value="<%= player.getId() %>">
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this student?');">Delete</button>
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete player');">Delete</button>
                 </form>
             </td>
         </tr>
