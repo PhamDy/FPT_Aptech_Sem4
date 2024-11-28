@@ -20,4 +20,6 @@ public interface PlayerIndexRepository {
 
     void delete(int id);
 
+    void deleteByPlayerAndIndexer(Player player, Indexer indexer);
+
 }

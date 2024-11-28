@@ -63,8 +63,20 @@ public class PlayerController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         try {
+
+            String action = req.getParameter("action");
+            if ("delete".equals(action)) {
+                int playerId = Integer.parseInt(req.getParameter("playerId"));
+                Player player = playerService.getPlayerById(playerId);
+                int indexerId = player.getIndexer().getIndexId();
+
+
+
+                res.sendRedirect(req.getContextPath() + "/player");
+                return;
+            }
 
             // Lấy dữ liệu từ form
             String playerName = req.getParameter("name");
@@ -88,10 +100,10 @@ public class PlayerController extends HttpServlet {
             playerIndex.setIndexer(indexer);
             playerIndex.setValue(value);
             playerIndexService.savePlayerIndex(playerIndex);
-            resp.sendRedirect(req.getContextPath() + "/player");
+            res.sendRedirect(req.getContextPath() + "/player");
         } catch (Exception e) {
             e.printStackTrace();
-            resp.getWriter().write("Error: " + e.getMessage());
+            res.getWriter().write("Error: " + e.getMessage());
         }
     }
 }

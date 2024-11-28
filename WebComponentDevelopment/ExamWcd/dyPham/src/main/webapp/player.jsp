@@ -36,10 +36,8 @@
             <td><%= player.getIndexName() %></td>
             <td><%= player.getValue() %></td>
             <td>
-                <!-- Nút Edit mở modal -->
                 <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editStudentModal<%= player.getId() %>">Edit</button>
 
-                <!-- Nút Delete -->
                 <form action="${pageContext.request.contextPath}/student" method="post" style="display:inline;">
                     <input type="hidden" name="action" value="delete">
                     <input type="hidden" name="playerId" value="<%= player.getId() %>">
@@ -50,6 +48,8 @@
 
         <% } %>
         </tbody>
+
+
     </table>
 
     <!-- Modal Add Player -->
@@ -97,6 +97,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 
 

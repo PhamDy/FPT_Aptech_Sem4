@@ -89,4 +89,9 @@ public class PlayerIndexRepositoryImpl implements PlayerIndexRepository {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void deleteByPlayerAndIndexer(Player player, Indexer indexer) {
+
+    }
 }
