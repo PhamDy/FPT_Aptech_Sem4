@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Student Listing</title>
+    <title>Player Listing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
@@ -38,7 +38,7 @@
             <td>
                 <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editStudentModal<%= player.getId() %>">Edit</button>
 
-                <form action="${pageContext.request.contextPath}/student" method="post" style="display:inline;">
+                <form action="${pageContext.request.contextPath}/player" method="post" style="display:inline;">
                     <input type="hidden" name="action" value="delete">
                     <input type="hidden" name="playerId" value="<%= player.getId() %>">
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete player');">Delete</button>
