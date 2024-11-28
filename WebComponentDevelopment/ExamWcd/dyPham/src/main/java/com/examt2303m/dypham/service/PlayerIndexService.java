@@ -36,4 +36,8 @@ public class PlayerIndexService {
         playerIndexRepository.save(playerIndex);
     }
 
+    public void deleteByPlayerAndIndexer(Player player, Indexer indexer){
+        playerIndexRepository.deleteByPlayerAndIndexer(player, indexer);
+    }
+
 }

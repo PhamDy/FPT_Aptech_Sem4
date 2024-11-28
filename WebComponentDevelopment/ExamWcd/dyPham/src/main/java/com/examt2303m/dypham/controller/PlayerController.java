@@ -72,7 +72,7 @@ public class PlayerController extends HttpServlet {
                 Player player = playerService.getPlayerById(playerId);
                 playerService.deletePlayer(player.getPlayerId());
                 indexerService.deleteIndexer(player.getIndexer().getIndexId());
-                playerIndexService.getPlayerIndexByPlayerAndIndexer(player, player.getIndexer());
+                playerIndexService.deleteByPlayerAndIndexer(player, player.getIndexer());
                 res.sendRedirect(req.getContextPath() + "/player");
                 return;
             }
