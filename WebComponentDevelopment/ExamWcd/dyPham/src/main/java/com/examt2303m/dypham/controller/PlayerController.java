@@ -38,7 +38,6 @@ public class PlayerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-
             List<Player> listPlayer = playerService.getAll();
             List<Indexer> listIndex = indexerService.getAll();
             List<ViewListPlayer> viewListPlayerList = new ArrayList<>();
@@ -58,7 +57,7 @@ public class PlayerController extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("player.jsp");
             dispatcher.forward(req, resp);
         }catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 

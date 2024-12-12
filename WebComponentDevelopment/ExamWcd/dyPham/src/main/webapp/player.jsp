@@ -38,7 +38,7 @@
             <td>
                 <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editStudentModal<%= player.getId() %>">Edit</button>
 
-                <form action="${pageContext.request.contextPath}/player" method="post" style="display:inline;">
+                <form action="${pageContext.request.contextPath}/student" method="post" style="display:inline;">
                     <input type="hidden" name="action" value="delete">
                     <input type="hidden" name="playerId" value="<%= player.getId() %>">
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete player');">Delete</button>
