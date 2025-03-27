@@ -137,14 +137,38 @@
       <jdbc-url>jdbc:oracle:thin:@//10.60.157.194:8021/pdb_hni</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="@localhostMySql" uuid="47721b0d-2067-437b-9549-228dee088ac2">
+    <data-source source="LOCAL" name="Bac_Ninh_TTHC" uuid="77934f94-3110-4b34-9290-a935ff030d7d">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//10.168.4.252:1521/pdb_bnh</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="Bac_Ninh_Thua_Dat" uuid="e86c8010-9263-4303-970a-b593a11493a8">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//10.168.4.252:1521/pdb_bnh</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="@localhost" uuid="85d131f6-1108-44da-a60a-14a9c2c7d16e">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/project</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="Bac_Ninh_TTHC" uuid="77934f94-3110-4b34-9290-a935ff030d7d">
+    <data-source source="LOCAL" name="Ban_Ninh_Chu_sd" uuid="54dc8534-d1ab-405e-bb3b-4d17cc21f1bb">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//10.168.4.252:1521/pdb_bnh</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="Bac_Ninh_Tong_hop" uuid="b140bc40-a89b-4b14-bbb5-02cc7d6ca838">
       <driver-ref>oracle.19</driver-ref>
       <synchronize>true</synchronize>
       <auto-commit>false</auto-commit>
